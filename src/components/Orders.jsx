@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 function Orders({ orders, maxIndex, totalCities }) {
-  
+
   let displayedOrders;
 
   if (maxIndex !== null) {
@@ -42,7 +42,7 @@ function Orders({ orders, maxIndex, totalCities }) {
                 key={index}
                 style={{ backgroundColor: index % 2 === 0 ? "#ddd" : "" }}
               >
-                <td style={{ padding: 6 }}>{order._id}</td>
+                <td style={{ padding: 4 }}>{order._id}</td>
                 <td>{order.date}</td>
                 <td>{order.total}</td>
                 <td>{order.customer.name}</td>
