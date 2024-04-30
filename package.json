@@ -4,9 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier \"{,!(dist)/**/}*.{js,jsx}\" --check",
+    "format:fix": "prettier \"{,!(dist)/**/}*.{js,jsx}\" --write",
     "preview": "vite preview"
   },
   "dependencies": {
