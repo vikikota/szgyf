@@ -8,7 +8,7 @@ function App() {
   const [totalCities, setTotalCities] = useState(null);
 
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/vikikota/szgyf-teszt/master/src/database/orders.json")
+    fetch("https://raw.githubusercontent.com/vikikota/szgyf/main/src/database/orders.json")
     //fetch("szgyf/src/database/orders.json")
       .then((response) => response.json())
       .then((responseJSON) => setOrders(responseJSON));
