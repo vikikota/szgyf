@@ -58,14 +58,17 @@ function Filter({ orders, setMaxIndex, setMaxTotal, setTotalCities }) {
       return acc;
     }, {});
 
-    let maxTotal = -Infinity;
+    let maxTotal = [];
     let cityOrders = [];
 
     Object.entries(userOrders).forEach(([, userInfo]) => {
-      if (userInfo.total > maxTotal) {
-        maxTotal = userInfo.total;
-        cityOrders = userInfo.orders;
-      }
+        if (userInfo.total > maxTotal) {
+            cityOrders = []
+            maxTotal = userInfo.total;
+            cityOrders = userInfo.orders;
+          } else if (userInfo.total === maxTotal) {
+            cityOrders = cityOrders.concat(userInfo.orders);
+          }
     });
 
     return cityOrders;
